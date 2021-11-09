@@ -3,7 +3,7 @@
 void main()
 {
     App* Game = new App();
-    Game->InitApp();
+    Game->LoopApp();
     delete Game;
 
 }
