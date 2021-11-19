@@ -12,8 +12,6 @@ private:
 		Menu = 0, Gameplay, GameOver, Credits
 	};
 	Screens currentScreen;
-	sf::CircleShape shape;
-	std::queue<sf::CircleShape> q;
 	Player* player;
 	//vector<int> test;
 	
@@ -24,4 +22,5 @@ public:
 	void LoopApp();
 
 	void Draw(sf::RenderWindow &win);
+	void Input();
 };

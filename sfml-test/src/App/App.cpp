@@ -15,10 +15,7 @@ void App::LoopApp()
 {
     sf::RenderWindow window(sf::VideoMode(800, 450), "Sokoban");
     sf::Event event;
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-
-    q.push(shape);
+  
     while (window.isOpen())
     {
         while (window.pollEvent(event))
@@ -27,6 +24,7 @@ void App::LoopApp()
                 window.close();
         }
 
+        Input();
         Draw(window);
 
     }
@@ -37,15 +35,11 @@ void App::Draw(sf::RenderWindow &win)
     win.clear();
     switch (currentScreen) {
     case Screens::Menu:
-        //sf::CircleShape temp = q.
-        win.draw(q.front());
         player->draw(win);
         break;
     case Screens::Credits:
-
         break;
     case Screens::Gameplay:
-
         break;
     case Screens::GameOver:
         break;
@@ -53,4 +47,9 @@ void App::Draw(sf::RenderWindow &win)
         break;
     }
     win.display();
+}
+
+void App::Input()
+{
+    player->move();
 }
