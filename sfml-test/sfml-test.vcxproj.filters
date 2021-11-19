@@ -7,6 +7,9 @@
     <Filter Include="src\App">
       <UniqueIdentifier>{f0d64c9a-3730-48de-abbd-e23d2017a653}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Player">
+      <UniqueIdentifier>{09b81d73-b8c3-4552-8f20-5c3738d3aa8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -15,10 +18,16 @@
     <ClCompile Include="src\App\App.cpp">
       <Filter>src\App</Filter>
     </ClCompile>
+    <ClCompile Include="src\Player\Player.cpp">
+      <Filter>src\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App\App.h">
       <Filter>src\App</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Player\Player.h">
+      <Filter>src\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

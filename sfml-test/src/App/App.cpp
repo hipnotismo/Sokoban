@@ -3,6 +3,7 @@
 App::App()
 {
     currentScreen = Screens::Menu;
+    player = new Player();
 }
 
 App::~App()
@@ -12,7 +13,7 @@ App::~App()
 
 void App::LoopApp()
 {
-    sf::RenderWindow window(sf::VideoMode(1280, 720), "Sokoban");
+    sf::RenderWindow window(sf::VideoMode(800, 450), "Sokoban");
     sf::Event event;
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
@@ -38,6 +39,7 @@ void App::Draw(sf::RenderWindow &win)
     case Screens::Menu:
         //sf::CircleShape temp = q.
         win.draw(q.front());
+        player->draw(win);
         break;
     case Screens::Credits:
 

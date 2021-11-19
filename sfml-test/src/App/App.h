@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <queue>
+#include "Player/Player.h"
+
 
 class App {
 private:
@@ -12,6 +14,7 @@ private:
 	Screens currentScreen;
 	sf::CircleShape shape;
 	std::queue<sf::CircleShape> q;
+	Player* player;
 	//vector<int> test;
 	
 	
