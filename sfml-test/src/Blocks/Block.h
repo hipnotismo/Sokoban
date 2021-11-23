@@ -5,12 +5,19 @@ using namespace sf;
 class Block {
 private:
 	RectangleShape rec;
+	Vector2f pos;
 	Texture texture;
 	Sprite sprite;
-	int posX;
-	int posY;
 	bool active;
 public:
-	Block(int x, int y);
+	Block();
+	Block(int x1, int y1);
 	~Block();
+	void setPosition(float x1, float y1);
+	void setPosition(Vector2f f);
+	void setActive(bool act);
+	Vector2f getPosition();
+	bool getActive();
+
+	void draw(RenderWindow& win);
 };

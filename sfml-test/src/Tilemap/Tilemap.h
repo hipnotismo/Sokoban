@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Player/Player.h"
+#include "Blocks/Block.h"
 using namespace sf;
 //-----------
 	//IDs:
@@ -15,10 +16,6 @@ using namespace sf;
 
 class Tilemap{
 private:
-	const int maxTLX = 18;
-	const int maxTLY = 9;
-	sf::Texture atlas[7];
-
 	struct tile
 	{
 		sf::RectangleShape rec; 
@@ -27,6 +24,11 @@ private:
 		sf::Sprite sprite;
 	};
 	tile board[9][18]; //Tilemap is x = 18, y = 9 TOTAL: 162
+	const int maxTLX = 18;
+	const int maxTLY = 9;
+	sf::Texture atlas[7];
+
+	Block* blocks[10];
 public:
 	Tilemap();
 	~Tilemap();
