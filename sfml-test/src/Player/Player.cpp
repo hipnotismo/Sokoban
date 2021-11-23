@@ -17,6 +17,7 @@ void Player::setPosition(float x1, float y1)
 {
 	pos.x = x1;
 	pos.y = y1;
+	sprite.setPosition(x1,y1);
 	
 }
 void Player::setPosition(Vector2f f)

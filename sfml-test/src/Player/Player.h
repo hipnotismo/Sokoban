@@ -10,8 +10,6 @@ private:
 	Vector2f pos;
 	Texture texture;
 	Sprite sprite;
-
-
 public:
 	Player();
 	~Player();

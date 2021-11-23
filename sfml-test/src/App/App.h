@@ -1,8 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <queue>
 #include "Player/Player.h"
 #include "Tilemap/Tilemap.h"
+using namespace sf;
 
 
 class App {

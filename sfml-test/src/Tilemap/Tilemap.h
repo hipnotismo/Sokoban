@@ -1,7 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Player/Player.h"
-using namespace std;
 using namespace sf;
 //-----------
 	//IDs:
@@ -27,7 +26,7 @@ private:
 		bool winSlot;
 		sf::Sprite sprite;
 	};
-	tile board[9][18]; //Tilemap is x = 18, y = 9
+	tile board[9][18]; //Tilemap is x = 18, y = 9 TOTAL: 162
 public:
 	Tilemap();
 	~Tilemap();
