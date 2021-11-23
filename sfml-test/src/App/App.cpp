@@ -16,8 +16,8 @@ void App::LoopApp()
 {
     sf::RenderWindow window(sf::VideoMode(800, 450), "Sokoban");
     sf::Event event;
-
-  
+    TM->levelOne();
+    
     while (window.isOpen())
     {
         while (window.pollEvent(event))

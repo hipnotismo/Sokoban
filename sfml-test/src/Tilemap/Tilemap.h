@@ -5,13 +5,13 @@ using namespace std;
 using namespace sf;
 //-----------
 	//IDs:
-	// 1- Left
-	// 2- Down
-	// 3- Right 
-	// 4- Up
-	// 5- Center
-	// 6- Walkable
-	// 7- Objective
+	// 0- Blank
+	// 1- Center
+	// 2- Left
+	// 3- Up
+	// 4- Right
+	// 5- Down
+	// 6- Objective
 	//-----------
 
 class Tilemap{
@@ -37,6 +37,9 @@ public:
 	void LoadAtlas();
 	void LoadSprites();
 	void draw(sf::RenderWindow& win);
+
+	void clearBoard();
+	void levelOne();
 
 
 };
