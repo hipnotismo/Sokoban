@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <queue>
 #include "Player/Player.h"
+#include "Tilemap/Tilemap.h"
 
 
 class App {
@@ -13,6 +14,7 @@ private:
 	};
 	Screens currentScreen;
 	Player* player;
+	Tilemap* TM;
 	//vector<int> test;
 	
 	

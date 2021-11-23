@@ -22,10 +22,12 @@
     <ClCompile Include="src\App\App.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Player\Player.cpp" />
+    <ClCompile Include="src\Tilemap\Tilemap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App\App.h" />
     <ClInclude Include="src\Player\Player.h" />
+    <ClInclude Include="src\Tilemap\Tilemap.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

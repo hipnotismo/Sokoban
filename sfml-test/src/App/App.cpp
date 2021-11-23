@@ -4,6 +4,7 @@ App::App()
 {
     currentScreen = Screens::Menu;
     player = new Player();
+    TM = new Tilemap();
 }
 
 App::~App()
@@ -15,6 +16,7 @@ void App::LoopApp()
 {
     sf::RenderWindow window(sf::VideoMode(800, 450), "Sokoban");
     sf::Event event;
+
   
     while (window.isOpen())
     {
@@ -35,7 +37,8 @@ void App::Draw(sf::RenderWindow &win)
     win.clear();
     switch (currentScreen) {
     case Screens::Menu:
-        player->draw(win);
+        TM->draw(win);
+        //player->draw(win);
         break;
     case Screens::Credits:
         break;

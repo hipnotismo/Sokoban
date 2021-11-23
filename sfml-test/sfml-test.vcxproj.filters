@@ -10,6 +10,12 @@
     <Filter Include="src\Player">
       <UniqueIdentifier>{09b81d73-b8c3-4552-8f20-5c3738d3aa8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Block">
+      <UniqueIdentifier>{f79d7c4e-7743-401d-a982-3bc44cc454ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Tilemap">
+      <UniqueIdentifier>{96eb7999-e96e-40a2-bc4e-444d386bd079}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -21,6 +27,9 @@
     <ClCompile Include="src\Player\Player.cpp">
       <Filter>src\Player</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tilemap\Tilemap.cpp">
+      <Filter>src\Tilemap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App\App.h">
@@ -28,6 +37,9 @@
     </ClInclude>
     <ClInclude Include="src\Player\Player.h">
       <Filter>src\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tilemap\Tilemap.h">
+      <Filter>src\Tilemap</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
