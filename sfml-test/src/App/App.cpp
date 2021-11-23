@@ -16,7 +16,7 @@ void App::LoopApp()
 {
     sf::RenderWindow window(sf::VideoMode(800, 450), "Sokoban");
     sf::Event event;
-    TM->levelOne();
+    TM->levelOne(player);
     
     while (window.isOpen())
     {
@@ -38,7 +38,7 @@ void App::Draw(sf::RenderWindow &win)
     switch (currentScreen) {
     case Screens::Menu:
         TM->draw(win);
-        //player->draw(win);
+        player->draw(win);
         break;
     case Screens::Credits:
         break;

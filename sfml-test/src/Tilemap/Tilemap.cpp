@@ -86,7 +86,7 @@ void Tilemap::clearBoard()
 	}
 }
 
-void Tilemap::levelOne()
+void Tilemap::levelOne(Player* p1)
 {
 	clearBoard();
 	board[1][12].id = 5;
@@ -133,7 +133,7 @@ void Tilemap::levelOne()
 	board[5][11].id = 0;
 	board[5][12].id = 0;
 
-
+	p1->setPosition(board[3][5].rec.getPosition());
 
 	LoadSprites();
 }

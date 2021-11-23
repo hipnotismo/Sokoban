@@ -2,20 +2,36 @@
 
 Player::Player()
 {
-	posX = 0;
-	posY = 0;
+	pos.x = 0;
+	pos.y = 0;
 	texture.loadFromFile("res/CloakGuy.png");
 	sprite.setTexture(texture);
-	s.push_back(sprite);
+
 }
 
 Player::~Player()
 {
 }
 
+void Player::setPosition(float x1, float y1)
+{
+	pos.x = x1;
+	pos.y = y1;
+	
+}
+void Player::setPosition(Vector2f f)
+{
+	pos = f;
+	sprite.setPosition(f);
+}
+Vector2f Player::getPosition()
+{
+	return pos;
+}
+
 void Player::draw(RenderWindow& win)
 {
-	win.draw(s.front());
+	win.draw(sprite);
 }
 
 void Player::move()

@@ -30,6 +30,9 @@
     <ClCompile Include="src\Tilemap\Tilemap.cpp">
       <Filter>src\Tilemap</Filter>
     </ClCompile>
+    <ClCompile Include="src\Blocks\Block.cpp">
+      <Filter>src\Block</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App\App.h">
@@ -40,6 +43,9 @@
     </ClInclude>
     <ClInclude Include="src\Tilemap\Tilemap.h">
       <Filter>src\Tilemap</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Blocks\Block.h">
+      <Filter>src\Block</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

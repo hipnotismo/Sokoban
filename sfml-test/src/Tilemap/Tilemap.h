@@ -1,6 +1,6 @@
 #pragma once
-#include <list>
 #include <SFML/Graphics.hpp>
+#include "Player/Player.h"
 using namespace std;
 using namespace sf;
 //-----------
@@ -28,8 +28,6 @@ private:
 		sf::Sprite sprite;
 	};
 	tile board[9][18]; //Tilemap is x = 18, y = 9
-
-	list<tile> l;
 public:
 	Tilemap();
 	~Tilemap();
@@ -39,7 +37,7 @@ public:
 	void draw(sf::RenderWindow& win);
 
 	void clearBoard();
-	void levelOne();
+	void levelOne(Player* p1);
 
 
 };
