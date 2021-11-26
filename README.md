@@ -5,7 +5,8 @@
 ### Creado por Martin Concetti y Matias Karplus
 #### Contactos: 
 * >Martin concetti: martinconcetti97@gmail.com
-* >Matias Karlus: 
+* >Matias Karlus: matias@karplus.com.ar
+
 ---
 # `Introducción`
 > Uno de los clasicos mas clasicos, este juego desafia tu paciancia y capacidad para resolver puzzles como pocos lo hacen hoy en dia,demuestra tu capacidad mental al superar los niveles!
