@@ -1,4 +1,8 @@
 #include "App.h"
+#include <SFML/Graphics.hpp>
+#include "Player/Player.h"
+#include "Tilemap/Tilemap.h"
+using namespace sf;
 
 App::App()
 {
@@ -39,6 +43,7 @@ void App::Draw(sf::RenderWindow &win)
     case Screens::Menu:
         TM->draw(win);
         player->draw(win);
+        
         break;
     case Screens::Credits:
         break;

@@ -4,7 +4,6 @@
 #include "Tilemap/Tilemap.h"
 using namespace sf;
 
-
 class App {
 private:
 	sf::RenderWindow window;
