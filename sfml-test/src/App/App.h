@@ -15,6 +15,7 @@ private:
 	Screens currentScreen;
 	Player* player;
 	Tilemap* TM;
+
 	//vector<int> test;
 	
 	

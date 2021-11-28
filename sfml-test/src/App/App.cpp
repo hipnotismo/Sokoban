@@ -54,5 +54,18 @@ void App::Draw(sf::RenderWindow &win)
 
 void App::Input()
 {
-    player->move();
+    //player->move();
+    switch (currentScreen) {
+    case Screens::Menu:
+        player->move();
+        break;
+    case Screens::Credits:
+        break;
+    case Screens::Gameplay:
+        break;
+    case Screens::GameOver:
+        break;
+    default:
+        break;
+    }
 }
