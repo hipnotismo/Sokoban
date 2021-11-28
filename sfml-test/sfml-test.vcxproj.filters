@@ -16,6 +16,9 @@
     <Filter Include="src\Tilemap">
       <UniqueIdentifier>{96eb7999-e96e-40a2-bc4e-444d386bd079}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Menu">
+      <UniqueIdentifier>{0a802fce-3b62-431f-8ea1-9041380d953b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -33,6 +36,9 @@
     <ClCompile Include="src\Blocks\Block.cpp">
       <Filter>src\Block</Filter>
     </ClCompile>
+    <ClCompile Include="src\Menu\Menu.cpp">
+      <Filter>src\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App\App.h">
@@ -46,6 +52,9 @@
     </ClInclude>
     <ClInclude Include="src\Blocks\Block.h">
       <Filter>src\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Menu\Menu.h">
+      <Filter>src\Menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
