@@ -1,4 +1,8 @@
 #include "Tilemap.h"
+#include <SFML/Graphics.hpp>
+#include "Player/Player.h"
+#include "Blocks/Block.h"
+using namespace sf;
 
 Tilemap::Tilemap()
 {
@@ -19,7 +23,7 @@ void Tilemap::initTile()
 			board[i][j].rec.setSize(sf::Vector2f(40.0f, 40.0f));
 			board[i][j].rec.setPosition(40 + 40 * j, 25 + 40 * i);
 			board[i][j].sprite.setPosition(Vector2f(board[i][j].rec.getPosition()));
-			board[i][j].id = 5;
+			board[i][j].id = 0;
 		}
 	}
 
@@ -71,6 +75,7 @@ void Tilemap::LoadSprites()
 
 }
 
+
 void Tilemap::draw(sf::RenderWindow& win)
 {
 	for (int i = 0; i < maxTLY; i++) {
@@ -78,6 +83,8 @@ void Tilemap::draw(sf::RenderWindow& win)
 			win.draw(board[i][j].sprite);
 		}
 	}
+
+	win.draw(blocks[0]->getSprite());
 }
 
 void Tilemap::clearBoard()
@@ -142,8 +149,9 @@ void Tilemap::levelOne(Player* p1)
 	} //ID SETTINGS
 	LoadSprites();
 
-	p1->setPosition(board[3][5].rec.getPosition());
-	blocks[0]->setPosition(board[3][9].rec.getPosition());
-
-
+	Vector2f tempVec = board[3][5].rec.getPosition();
+	Vector2f tempVec2 = board[3][9].rec.getPosition();
+	p1->setPosition(static_cast<int>(tempVec.x), static_cast<int>(tempVec.y));
+	blocks[0]->setPosition(static_cast<int>(tempVec2.x), static_cast<int>(tempVec2.y));
+	blocks[0]->setActive(true);
 }

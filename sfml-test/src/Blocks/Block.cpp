@@ -1,4 +1,6 @@
 #include "Block.h"
+#include <SFML/Graphics.hpp>
+using namespace sf;
 
 Block::Block()
 {
@@ -29,25 +31,44 @@ Block::~Block()
 
 }
 
-void Block::setPosition(float x1, float y1)
+void Block::setVPosition(float x1, float y1)
 {
 	pos.x = x1;
 	pos.y = y1;
 	sprite.setPosition(x1, y1);
 
 }
-void Block::setPosition(Vector2f f)
+void Block::setVPosition(Vector2f f)
 {
 	pos = f;
 	sprite.setPosition(f);
 }
-void Block::setActive(bool act) {
-	active = act;
-}
-
-Vector2f Block::getPosition()
+Vector2f Block::getVPosition()
 {
 	return pos;
+}
+
+void Block::setPosition(int x, int y)
+{
+	posX = x;
+	posY = y;
+}
+
+int Block::getPositionX()
+{
+	return posX;
+}
+
+int Block::getPositionY()
+{
+	return posY;
+}
+Sprite Block::getSprite() {
+	return sprite;
+}
+
+void Block::setActive(bool act) {
+	active = act;
 }
 bool Block::getActive() {
 	return active;
@@ -55,5 +76,8 @@ bool Block::getActive() {
 
 void Block::draw(RenderWindow& win)
 {
-	win.draw(sprite);
+	if (active)
+	{
+		win.draw(sprite);	
+	}
 }
