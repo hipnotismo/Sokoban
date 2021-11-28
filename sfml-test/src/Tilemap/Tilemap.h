@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-//class Player;
-#include "Player/Player.h"
+class Player;
+//#include "Player/Player.h"
 #include "Blocks/Block.h"
 using namespace sf;
 
