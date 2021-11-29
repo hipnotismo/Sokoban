@@ -1,10 +1,5 @@
-#include "Player.h"
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include "Blocks/Block.h"
-#include "Tilemap/Tilemap.h"
-using namespace std;
-using namespace sf;
+#include "player.h"
+
 
 Player::Player()
 {
@@ -69,7 +64,7 @@ void Player::move()
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
-		//for (int i = 0; i < 10; i++) //Length 10 is the amount of blocks created in Tilemap.cpp
+		//or (int i = 0; i < 10; i++) //Length 10 is the amount of blocks created in Tilemap.cpp
 		//{
 		//	if (blocks[i]->getPositionY() == posY + 1 && blocks[i]->getPositionX() == posX && board[posX][posY + 2].id == 6 && blocks[i]->getActive()) {
 		//		

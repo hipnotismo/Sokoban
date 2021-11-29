@@ -19,19 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\App\App.cpp" />
-    <ClCompile Include="src\Blocks\Block.cpp" />
-    <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\Menu\Menu.cpp" />
-    <ClCompile Include="src\Player\Player.cpp" />
-    <ClCompile Include="src\Tilemap\Tilemap.cpp" />
+    <ClCompile Include="src\App\app.cpp" />
+    <ClCompile Include="src\Blocks\block.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Menu\menu.cpp" />
+    <ClCompile Include="src\Player\player.cpp" />
+    <ClCompile Include="src\Tilemap\tilemap.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\App\App.h" />
-    <ClInclude Include="src\Blocks\Block.h" />
-    <ClInclude Include="src\Menu\Menu.h" />
-    <ClInclude Include="src\Player\Player.h" />
-    <ClInclude Include="src\Tilemap\Tilemap.h" />
+    <ClInclude Include="src\App\app.h" />
+    <ClInclude Include="src\Blocks\block.h" />
+    <ClInclude Include="src\Menu\menu.h" />
+    <ClInclude Include="src\Player\player.h" />
+    <ClInclude Include="src\Tilemap\tilemap.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -161,13 +161,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(Solutiondir)res;$(Solutiondir)src;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Solutiondir)res;$(Solutiondir)src;$(SolutionDir)Lib\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)Lib\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

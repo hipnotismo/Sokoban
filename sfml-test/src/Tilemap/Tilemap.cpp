@@ -1,8 +1,5 @@
-#include "Tilemap.h"
-#include <SFML/Graphics.hpp>
+#include "tilemap.h"
 #include "Player/Player.h"
-#include "Blocks/Block.h"
-using namespace sf;
 
 Tilemap::Tilemap()
 {

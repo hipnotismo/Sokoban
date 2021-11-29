@@ -1,6 +1,4 @@
-#include "Block.h"
-#include <SFML/Graphics.hpp>
-using namespace sf;
+#include "block.h"
 
 Block::Block()
 {

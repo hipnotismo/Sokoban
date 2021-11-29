@@ -1,8 +1,4 @@
-#include "App.h"
-#include <SFML/Graphics.hpp>
-#include "Player/Player.h"
-#include "Tilemap/Tilemap.h"
-using namespace sf;
+#include "app.h"
 
 App::App()
 {
@@ -49,7 +45,6 @@ void App::LoopApp()
                     switch (menu->GetPressedItem())
                     {
                     case 0:
-                     //   std::cout << "Play button has been pressed" << std::endl;
                         currentScreen = Screens::Gameplay;
                         break;
                     case 1:
@@ -84,8 +79,7 @@ void App::Draw(sf::RenderWindow &win)
     win.clear();
     switch (currentScreen) {
     case Screens::Menu:
-        //TM->draw(win);
-        //player->draw(win);
+       
         menu->draw(win);
         break;
     case Screens::Credits:
@@ -104,11 +98,9 @@ void App::Draw(sf::RenderWindow &win)
 
 void App::Input()
 {
-    //player->move();
     switch (currentScreen) {
     case Screens::Menu:
-       // player->move();
-        //menu->Input();
+     
         break;
     case Screens::Credits:
         break;

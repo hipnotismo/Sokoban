@@ -1,8 +1,10 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
-#include "Player/Player.h"
-#include "Tilemap/Tilemap.h"
-#include "Menu/Menu.h"
+
+#include "Player/player.h"
+#include "Tilemap/tilemap.h"
+#include "Menu/menu.h"
 
 using namespace sf;
 

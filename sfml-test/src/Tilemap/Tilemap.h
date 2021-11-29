@@ -1,7 +1,11 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
+
 class Player;
+
 #include "Blocks/Block.h"
+
 using namespace sf;
 
 //-----------

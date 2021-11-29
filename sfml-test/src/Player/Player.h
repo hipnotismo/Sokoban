@@ -1,8 +1,12 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+
 #include <iostream>
+
+#include <SFML/Graphics.hpp>
+
 #include "Blocks/Block.h"
-#include "Tilemap/Tilemap.h"
+#include "Tilemap/tilemap.h"
+
 using namespace std;
 using namespace sf;
 
