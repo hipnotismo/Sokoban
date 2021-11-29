@@ -152,6 +152,9 @@
       <AdditionalLibraryDirectories>$(ProjectDir)Lib\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>"$(SolutionDir)Utility\DebugCommands.bat" "$(SolutionDir)" "$(TargetDir)" "$(SolutionDir)Lib\SFML\bin2"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
