@@ -1,7 +1,16 @@
 changelog
 ---------
 
-Release actual:    Sokoban 0.6 (28 Noviembre 2021)
+Release actual:    Sokoban 0.7 (29 Noviembre 2021)
+-------------------------------------------------------------------------
+Cambios:
+-Implementacion de LFS.
+-Imagen de fondo.
+-Archivos BATCH para release y debug.
+-Pantalla de creditos.
+
+-------------------------------------------------------------------------
+Release :	Sokoban 0.6 (28 Noviembre 2021)
 -------------------------------------------------------------------------
 Cambios:
 -Creacion de la classe menu.
