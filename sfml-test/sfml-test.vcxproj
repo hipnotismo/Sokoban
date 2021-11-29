@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\App\app.cpp" />
     <ClCompile Include="src\Blocks\block.cpp" />
+    <ClCompile Include="src\Credits\credits.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu\menu.cpp" />
     <ClCompile Include="src\Player\player.cpp" />
@@ -29,6 +30,7 @@
   <ItemGroup>
     <ClInclude Include="src\App\app.h" />
     <ClInclude Include="src\Blocks\block.h" />
+    <ClInclude Include="src\Credits\credits.h" />
     <ClInclude Include="src\Menu\menu.h" />
     <ClInclude Include="src\Player\player.h" />
     <ClInclude Include="src\Tilemap\tilemap.h" />

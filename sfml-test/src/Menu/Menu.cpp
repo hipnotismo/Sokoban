@@ -15,7 +15,7 @@ Menu::Menu(float width, float height)
 
 	menu[1].setFont(font);
 	menu[1].setFillColor(sf::Color::White);
-	menu[1].setString("Options");
+	menu[1].setString("Creditos");
 	menu[1].setPosition(sf::Vector2f(width / 5, height / (MAX_NUMBER_OF_ITEMS + 1) * 2));
 
 	menu[2].setFont(font);
@@ -65,47 +65,3 @@ void Menu::MoveDown()
 		menu[selectedItemIndex].setFillColor(sf::Color::Red);
 	}
 }
-/*
-void Menu::Input()
-{
-
-	switch (event.type)
-	{
-	case sf::Event::KeyReleased:
-		switch (event.key.code)
-		{
-			case (sf::Keyboard::isKeyPressed(sf::Keyboard::W)):
-			MoveUp();
-			break;
-
-		case sf::Keyboard::Down:
-			MoveDown();
-			break;
-
-		case sf::Keyboard::Return:
-			switch (GetPressedItem())
-			{
-			case 0:
-				std::cout << "Play button has been pressed" << std::endl;
-				break;
-			case 1:
-				std::cout << "Option button has been pressed" << std::endl;
-				break;
-			case 2:
-			//	window.close();
-				break;
-			}
-
-			break;
-		}
-
-		break;
-	case sf::Event::Closed:
-	//	window.close();
-
-		break;
-
-	}
-}
-
-*/

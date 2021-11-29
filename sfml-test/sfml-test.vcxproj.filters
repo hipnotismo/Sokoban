@@ -19,6 +19,9 @@
     <Filter Include="src\Menu">
       <UniqueIdentifier>{0a802fce-3b62-431f-8ea1-9041380d953b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Credits">
+      <UniqueIdentifier>{47a7dbb6-2bee-441c-b6ab-82fcc41aa775}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -39,6 +42,9 @@
     <ClCompile Include="src\Menu\menu.cpp">
       <Filter>src\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\Credits\credits.cpp">
+      <Filter>src\Credits</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App\app.h">
@@ -55,6 +61,9 @@
     </ClInclude>
     <ClInclude Include="src\Menu\menu.h">
       <Filter>src\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Credits\credits.h">
+      <Filter>src\Credits</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
