@@ -1,5 +1,5 @@
-# Sokoban
-![Sokaba](sfml-test/res/README/Level-1.png)
+# Sokoban 
+![Sokaba](sfml-test/res/README/Main-screen.png)
 
 # **`Sokoban`** un Sokoban creado en glorioso SFML
 
@@ -11,6 +11,8 @@
 ---
 # `Introducción`
 > Uno de los clasicos mas clasicos, este juego desafia tu paciancia y capacidad para resolver puzzles como pocos lo hacen hoy en dia,demuestra tu capacidad mental al superar los niveles!
+> 
+![Sokaba](sfml-test/res/README/Level-1.png)
 
 # `instrucciones`
 >Mueve a tu personaje con WASD.
