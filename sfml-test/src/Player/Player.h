@@ -29,6 +29,6 @@ public:
 	int getPositionY();
 
 	void draw(RenderWindow& win);
-	void move(Tile board[9][18], Block* blocks[]);
+	void move(Tile board[9][18], Block* blocks[], RenderWindow& win);
 };
 

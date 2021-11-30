@@ -56,85 +56,38 @@ void Player::draw(RenderWindow& win)
 	win.draw(sprite);
 }
 
-void Player::move(Tile board[9][18], Block* blocks[])
+void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win)
 {
-	Event event;
+	
+	win.setKeyRepeatEnabled(false);
 	bool canMove = true;
 
-	switch (event.type==Event::KeyReleased) 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
-	case sf::Event::KeyReleased:
-		switch (event.key.code)
-		{
-			case sf::Keyboard::A:
-				if (canMove && posX > 0) {
-					posX--;
-				}
-				break;
-			case sf::Keyboard::D:
-				if (canMove && posX < 18) {
-					posX++;
-				}
-				break;
-			case sf::Keyboard::W:
-				if (canMove && posY > 0) {
-					posY--;
-				}
-				break;
-			case sf::Keyboard::S:
-				if (canMove && posY > 9) {
-					posY++;
-				}
-				break;
-		default:
-			break;
+		if (canMove && posX > 0&&board[posY][posX-1].id==0) {
+			posX--;
 		}
-
 	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	{
 
-
-	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	//{
-	//	
-	//}
-	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-	//{
-	//		{
-	//		/*for (int i = 0; i < 10; i++) {
-	//			if (blocks[i]->getPositionY() == posY + 1 && blocks[i]->getPositionX() == posX && board[posX][posY + 2].id == 0 && blocks[i]->getActive()) {
-	//						blocks[i]->setPosition(static_cast<int>(board[posX][posY + 2].rec.getPosition().x), static_cast<int>(board[posX][posY + 2].rec.getPosition().y));
-
-	//				}
-	//			for (int j = 0; j < 10; j++) {
-	//				if (blocks[i]->getPositionX() == blocks[j]->getPositionX() && blocks[i]->getPositionY() == blocks[j]->getPositionY() && i != j) {
-	//					blocks[i]->setPosition(staticboard[posX][posY + 1].rec.getPosition());
-	//					blocks[i]->setStrideY(-1);
-	//					canMove = false;
-	//				}
-	//			}
-
-
-	//			if ((posY + 1 == blocks[i]->getPositionY() && posX == blocks[i]->getPositionX() && board[posX][posY + 2].id != 0) && canMove && blocks[i]->getActive() || canMove && board[posX][posY + 1].id != 0) {
-	//				canMove = false;
-	//			}
-	//		}*/
-	//	}
-	//	if (canMove && posX < 18) {
-	//		posX++;
-	//	}
-	//}
-	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-	//{
-	//	if (canMove && posY > 0) {
-	//		posY--;	
-	//	}
-	//}
-	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-	//{
-	//	if (canMove && posY < 9) {
-	//		posY++;				
-	//	}
-	//}
+		if (canMove && posX < 17 && board[posY][posX + 1].id == 0) {
+			posX++;
+			//If you can move AND you're withing the Tilemap AND the tile's ID is walkable (0).
+		}
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	{
+		if (canMove && posY > 0 && board[posY-1][posX].id == 0) {
+			posY--;	
+		}
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	{
+		if (canMove && posY < 8&&board[posY + 1][posX].id == 0) {
+			posY++;				
+		}
+	}
 
 	cout << "X: " << posX << " Y: " << posY << endl;
 		

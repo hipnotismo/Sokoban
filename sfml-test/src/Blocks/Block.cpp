@@ -2,18 +2,10 @@
 
 Block::Block()
 {
+	posX = 0;
+	posY = 0;
 	rec.setSize({ 40,40 });
 	rec.setPosition(0,0);
-	active = false;
-
-	texture.loadFromFile("res/Block.png");
-	sprite.setTexture(texture);
-}
-
-Block::Block(int x1, int y1)
-{
-	rec.setSize({40,40});
-	rec.setPosition(x1,y1);
 	active = false;
 
 	texture.loadFromFile("res/Block.png");

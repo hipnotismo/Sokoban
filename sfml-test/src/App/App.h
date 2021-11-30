@@ -28,5 +28,5 @@ public:
 	void LoopApp();
 
 	void Draw(sf::RenderWindow &win);
-	void Input();
+	void Input(RenderWindow& win);
 };

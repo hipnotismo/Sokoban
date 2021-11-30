@@ -68,7 +68,7 @@ void App::LoopApp()
 
         }
 
-        Input();
+        Input(window);
         Draw(window);
 
     }
@@ -96,7 +96,7 @@ void App::Draw(sf::RenderWindow &win)
     win.display();
 }
 
-void App::Input()
+void App::Input(RenderWindow& win)
 {
     switch (currentScreen) {
     case Screens::Menu:
@@ -105,7 +105,7 @@ void App::Input()
     case Screens::Credits:
         break;
     case Screens::Gameplay:
-        player->move(TM->board,TM->blocks);
+        player->move(TM->board,TM->blocks, win);
         break;
     case Screens::GameOver:
         break;

@@ -14,7 +14,6 @@ private:
 	bool active;
 public:
 	Block();
-	Block(int x1, int y1);
 	~Block();
 	
 	void setPosition(int x, int y);
