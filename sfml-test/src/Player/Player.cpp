@@ -61,6 +61,7 @@ int Player::getPositionY()
 
 void Player::draw(RenderWindow& win)
 {
+	
 	sprite.setPosition((posX*40)+40,(posY*40)+25);
 	win.draw(sprite);
 }

@@ -26,6 +26,7 @@ private:
 	Sound sound;
 
 	bool canMove = true;
+	bool pause = true;
 	float delayCanMove;
 	float auxDelayCanMove;
 
