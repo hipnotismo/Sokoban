@@ -54,9 +54,9 @@ bool Block::getActive() {
 void Block::draw(RenderWindow& win)
 {
 	sprite.setPosition((posX * 40) + 40, (posY * 40) + 25);
-
+	
 	if (active)
 	{
-		win.draw(sprite);	
+		win.draw(sprite);
 	}
 }

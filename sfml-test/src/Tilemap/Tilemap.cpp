@@ -22,7 +22,7 @@ void Tilemap::initTile()
 			board[i][j].rec.setSize(sf::Vector2f(40.0f, 40.0f));
 			board[i][j].rec.setPosition(40 + 40 * j, 25 + 40 * i);
 			board[i][j].sprite.setPosition(Vector2f(board[i][j].rec.getPosition()));
-			board[i][j].id = 0;
+			board[i][j].id = 10; //10 is well outside any of the IDs used for the game.
 		}
 	}
 
@@ -82,7 +82,14 @@ void Tilemap::draw(sf::RenderWindow& win)
 		}
 	}
 
-	win.draw(blocks[0]->getSprite());
+	for (int i = 0; i < 10; i++)
+	{
+		if (blocks[i]->getActive())
+		{
+			blocks[i]->draw(win);
+		}
+	}
+
 }
 
 
@@ -90,7 +97,7 @@ void Tilemap::clearBoard()
 {
 	for (int i = 0; i < maxTLY; i++) {
 		for (int j = 0; j < maxTLX; j++) {
-			board[i][j].id = 0;
+			board[i][j].id = 10;
 			board[i][j].winSlot = false;
 			LoadSprites();
 		}

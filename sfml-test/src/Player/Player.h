@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 #include "Tilemap/tilemap.h"
 class Block;
 
@@ -16,6 +17,8 @@ private:
 	int posY;
 	Texture texture;
 	Sprite sprite;
+	bool canMove = true;
+	Clock clock;
 public:
 	Player();
 	~Player();

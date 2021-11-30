@@ -10,7 +10,7 @@ Player::Player()
 	posY = 0;
 	texture.loadFromFile("res/CloakGuy.png");
 	sprite.setTexture(texture);
-
+	canMove = true;
 }
 
 Player::~Player()
@@ -33,7 +33,6 @@ Vector2f Player::getVPosition()
 {
 	return pos;
 }
-
 void Player::setPosition(int x, int y)
 {
 	posX = x;
@@ -58,22 +57,30 @@ void Player::draw(RenderWindow& win)
 
 void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win)
 {
-	
-	win.setKeyRepeatEnabled(false);
-	bool canMove = true;
+
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
 		if (canMove && posX > 0&&board[posY][posX-1].id==0) {
 			posX--;
+			//If you can move AND you're withing the Tilemap AND the tile's ID is walkable (0).
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
+		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
+		{
+			if (blocks[i]->getPositionX() == posX+1 && board[posY][posX+2].id!=0)
+			{
+				canMove = false;
+			}
+			else {
+				blocks[i]->setStrideX(1);
+			}
+		}
 
 		if (canMove && posX < 17 && board[posY][posX + 1].id == 0) {
 			posX++;
-			//If you can move AND you're withing the Tilemap AND the tile's ID is walkable (0).
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
@@ -87,11 +94,10 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win)
 		if (canMove && posY < 8&&board[posY + 1][posX].id == 0) {
 			posY++;				
 		}
-	}
+	}	
 
-	cout << "X: " << posX << " Y: " << posY << endl;
-		
-}
+
+} 
 
 
 
