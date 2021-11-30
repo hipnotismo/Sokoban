@@ -154,6 +154,10 @@ void App::Update()
     case 3:
         TM->levelThreeWincon(player);
         break;
+    case 4:
+        TM->setLevel(1);
+        currentScreen = Screens::Gameplay;
+        break;
     default:
         break;
     }

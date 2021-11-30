@@ -50,8 +50,9 @@ public:
 	void draw(sf::RenderWindow& win);
 	void input(Player* p1);
 
-	void levelController(Player* p1);
+	bool levelController(Player* p1);
 	int getLevel();
+	void setLevel(int x);
 
 	void clearBoard();
 	void levelOne(Player* p1);

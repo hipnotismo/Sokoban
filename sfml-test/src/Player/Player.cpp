@@ -86,11 +86,25 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 	{
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
-			if (board[posY][posX - 2].id != 0 && posX - 1 == blocks[i]->getPositionX() && posY == blocks[i]->getPositionY())
+			for (int j = 0; j < 10; j++)
+			{
+				if (posX - 1 == blocks[i]->getPositionX() &&
+					posX - 2 == blocks[j]->getPositionX() &&
+					blocks[i]->getActive() &&
+					blocks[j]->getActive() &&
+					posY == blocks[i]->getPositionY() &&
+					posY==blocks[j]->getPositionY())
+				{
+					canMove = false;
+					//WHEN There is a block below the player, and a block below Block1, AND the X axis is aligned AND everything is active THEN move false
+				}
+			}
+			if (board[posY][posX - 2].id != 0 && posX - 1 == blocks[i]->getPositionX() && posY == blocks[i]->getPositionY()) //PLAYER - BLOCK - WALL
 			{
 				canMove = false;
 
 			}
+			
 			if (posX - 1 == blocks[i]->getPositionX() && posY == blocks[i]->getPositionY() && board[blocks[i]->getPositionY()][blocks[i]->getPositionX()-1].id == 0 && canMove)
 			{
 				blocks[i]->setStrideX(-1);
@@ -109,6 +123,14 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 	{
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
+			for (int j = 0; j < 10; j++)
+			{
+				if (posX + 1 == blocks[i]->getPositionX() && posX + 2 == blocks[j]->getPositionX() && blocks[i]->getActive() && blocks[j]->getActive() && posY == blocks[i]->getPositionY() && posY == blocks[j]->getPositionY())
+				{
+					canMove = false;
+					//WHEN There is a block below the player, and a block below Block1, AND the X axis is aligned AND everything is active THEN move false
+				}
+			}
 			if (board[posY][posX+2].id!=0&& posX + 1 == blocks[i]->getPositionX() && posY == blocks[i]->getPositionY())
 			{
 				canMove = false;
@@ -132,6 +154,20 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 	{
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
+			for (int j = 0; j < 10; j++)
+			{
+				if (posY - 1 == blocks[i]->getPositionY() &&
+					posY - 2 == blocks[j]->getPositionY() &&
+					blocks[i]->getActive() &&
+					blocks[j]->getActive() &&
+					posX == blocks[i]->getPositionX() &&
+					posX == blocks[j]->getPositionX())
+				{
+					canMove = false;
+					//WHEN There is a block below the player, and a block below Block1, AND the X axis is aligned AND everything is active THEN move false
+				}
+
+			}
 			if (board[posY-2][posX].id != 0 && posY - 1 == blocks[i]->getPositionY() && posX == blocks[i]->getPositionX())
 			{
 				canMove = false;
@@ -156,6 +192,14 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
+			for (int j = 0; j < 10; j++)
+			{
+				if (posY+1== blocks[i]->getPositionY() && posY+2==blocks[j]->getPositionY() && blocks[i]->getActive()&&blocks[j]->getActive()&&posX==blocks[i]->getPositionX() && posX == blocks[j]->getPositionX())
+				{
+					canMove = false; 
+					//WHEN There is a block below the player, and a block below Block1, AND the X axis is aligned AND everything is active THEN move false
+				}
+			}
 			if (board[posY + 2][posX].id != 0 && posY + 1 == blocks[i]->getPositionY() && posX == blocks[i]->getPositionX())
 			{
 				canMove = false;

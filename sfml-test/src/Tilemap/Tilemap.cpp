@@ -7,7 +7,7 @@ Tilemap::Tilemap()
 	{
 		blocks[i] = new Block();
 	}
-	level = 1;
+	level = 3;
 
 	initTile();
 	LoadAtlas();
@@ -115,7 +115,7 @@ void Tilemap::input(Player* p1)
 	}
 }
 
-void Tilemap::levelController(Player* p1)
+bool Tilemap::levelController(Player* p1)
 {
 	switch (level)
 	{
@@ -128,6 +128,8 @@ void Tilemap::levelController(Player* p1)
 	case 3:
 		levelThree(p1);
 		break;
+	case 4:
+		return false;
 	default:
 		break;
 	}
@@ -136,6 +138,11 @@ void Tilemap::levelController(Player* p1)
 int Tilemap::getLevel()
 {
 	return level;
+}
+
+void Tilemap::setLevel(int x)
+{	
+	level = x;
 }
 
 void Tilemap::clearBoard()
@@ -211,7 +218,7 @@ void Tilemap::levelOneWincon(Player* p1)
 	if (board[2][12].pos.x == blocks[0]->getPositionX()&& board[2][12].pos.y == blocks[0]->getPositionY())
 	{
 		cout << "Win!" << endl;
-		level++;
+		level = 2;
 		levelController(p1);
 	}
 }
@@ -271,7 +278,7 @@ void Tilemap::levelTwoWincon(Player* p1)
 	if (board[4][10].pos.x == blocks[0]->getPositionX() && board[4][10].pos.y == blocks[0]->getPositionY())
 	{
 		cout << "Win!" << endl;
-		level++;
+		level = 3;
 		levelController(p1);
 	}
 }
@@ -366,7 +373,7 @@ void Tilemap::levelThreeWincon(Player* p1)
 	if (win1&&win2)
 	{
 		cout << "Win!" << endl;
-		level++;
+		level = 4;
 		levelController(p1);
 	}
 
