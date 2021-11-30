@@ -29,5 +29,7 @@ public:
 	void setActive(bool act);
 	bool getActive();
 
+	void reset();
+
 	void draw(RenderWindow& win);
 };

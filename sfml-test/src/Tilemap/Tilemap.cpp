@@ -129,7 +129,7 @@ bool Tilemap::levelController(Player* p1)
 		levelThree(p1);
 		break;
 	case 4:
-		return false;
+		return false;;
 	default:
 		break;
 	}
@@ -153,6 +153,12 @@ void Tilemap::clearBoard()
 			board[i][j].winSlot = false;
 			LoadSprites();
 		}
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		blocks[i]->reset();
+
 	}
 }
 

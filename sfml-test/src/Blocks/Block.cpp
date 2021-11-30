@@ -51,6 +51,13 @@ bool Block::getActive() {
 	return active;
 }
 
+void Block::reset()
+{
+	posX = -1; //well outside the board
+	posY = -1;
+	active = false;
+}
+
 void Block::draw(RenderWindow& win)
 {
 	sprite.setPosition((posX * 40) + 40, (posY * 40) + 25);
