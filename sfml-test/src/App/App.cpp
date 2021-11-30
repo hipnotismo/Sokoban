@@ -34,6 +34,7 @@ void App::LoopApp()
     music2.play();
     music2.setVolume(0);
     TM->levelOne(player);
+    //TM->levelTwo(player);
 
     while (window.isOpen())
     {    

@@ -51,6 +51,12 @@ public:
 
 	void clearBoard();
 	void levelOne(Player* p1);
+	void levelOneWincon();
+	void levelTwo(Player* p1);
+	void levelTwoWincon();
+	void levelThree(Player* p1);
+	void lvlThreeWincon();
+	
 
 
 };
