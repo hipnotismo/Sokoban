@@ -11,7 +11,7 @@ Menu::Menu(float width, float height)
 	menu[0].setFont(font);
 	menu[0].setFillColor(sf::Color::Cyan);
 	menu[0].setString("Jugar");
-	menu[0].setPosition(sf::Vector2f(width / 40, 10));
+	menu[0].setPosition(sf::Vector2f(width / 40, 50));
 
 	menu[1].setFont(font);
 	menu[1].setFillColor(sf::Color::White);
@@ -24,6 +24,11 @@ Menu::Menu(float width, float height)
 	menu[2].setPosition(sf::Vector2f(width / 40, height - 60));
 
 
+	title.setFont(font);
+	title.setFillColor(sf::Color::Cyan);
+	title.setString("SOKOBAN");
+	title.setCharacterSize(40);
+	title.setPosition(sf::Vector2f(width / 40, 10));
 
 	control[0].setFont(font);
 	control[0].setFillColor(sf::Color::Cyan);
@@ -83,6 +88,8 @@ void Menu::draw(sf::RenderWindow& window)
 	{
 		window.draw(control[i]);
 	}
+
+	window.draw(title);
 
 }
 

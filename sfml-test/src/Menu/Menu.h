@@ -16,6 +16,7 @@ private:
     sf::Font font;
     sf::Text menu[MAX_NUMBER_OF_ITEMS];
     sf::Text control[MAX_NUMBER_OF_CONTROL];
+    sf::Text title;
     Texture texture;
     Sprite sprite;
 public:

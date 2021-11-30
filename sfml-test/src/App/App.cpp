@@ -8,6 +8,23 @@ App::App()
     menu = new Menu(800, 450);
     credit = new credits(800, 450);
     check = true;
+
+    if (!font.loadFromFile("res/arial.ttf"))
+    {
+        // handle error
+    }
+
+    UI[0].setFont(font);
+    UI[0].setFillColor(sf::Color::Cyan);
+    UI[0].setString("P para menu");
+    UI[0].setPosition(sf::Vector2f(500, 10));
+
+    UI[1].setFont(font);
+    UI[1].setFillColor(sf::Color::Cyan);
+    UI[1].setString("R para reinicio");
+    UI[1].setPosition(sf::Vector2f(500, 100));
+
+
 }
 
 App::~App()
@@ -34,6 +51,7 @@ void App::LoopApp()
     music2.play();
     music2.setVolume(0);
     
+ 
 
     while (window.isOpen())
     {    
@@ -108,6 +126,10 @@ void App::Draw(sf::RenderWindow &win)
     case Screens::Gameplay:
         TM->draw(win);
         player->draw(win);
+        for (int i = 0; i < MAX_NUMBER_OF_ITEMS; i++)
+        {
+            window.draw(UI[i]);
+        }
         break;
     case Screens::GameOver:
         break;
