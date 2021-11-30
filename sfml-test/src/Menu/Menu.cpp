@@ -11,25 +11,51 @@ Menu::Menu(float width, float height)
 	menu[0].setFont(font);
 	menu[0].setFillColor(sf::Color::Cyan);
 	menu[0].setString("Jugar");
-	menu[0].setPosition(sf::Vector2f(width / 5, height / (MAX_NUMBER_OF_ITEMS + 1) * 1));
+	menu[0].setPosition(sf::Vector2f(width / 40, 10));
 
 	menu[1].setFont(font);
 	menu[1].setFillColor(sf::Color::White);
 	menu[1].setString("Creditos");
-	menu[1].setPosition(sf::Vector2f(width / 5, height / (MAX_NUMBER_OF_ITEMS + 1) * 2));
+	menu[1].setPosition(sf::Vector2f(width / 40, height / (MAX_NUMBER_OF_ITEMS + 1) * 3));
 
 	menu[2].setFont(font);
 	menu[2].setFillColor(sf::Color::White);
 	menu[2].setString("Salida");
-	menu[2].setPosition(sf::Vector2f(width / 5, height / (MAX_NUMBER_OF_ITEMS + 1) * 3));
+	menu[2].setPosition(sf::Vector2f(width / 40, height - 60));
 
 
 
-	control.setFont(font);
-	control.setFillColor(sf::Color::Cyan);
-	control.setString("W y S para navegar ENTER para interactuar");
-	control.setCharacterSize(15);
-	control.setPosition(sf::Vector2f(width - 300 ,  30 ));
+	control[0].setFont(font);
+	control[0].setFillColor(sf::Color::Cyan);
+	control[0].setString("W y S para navegar");
+	control[0].setCharacterSize(15);
+	control[0].setPosition(sf::Vector2f(width - 300, 30));
+
+
+	control[1].setFont(font);
+	control[1].setFillColor(sf::Color::Cyan);
+	control[1].setString("W,A,S,D para mover al personaje");
+	control[1].setCharacterSize(15);
+	control[1].setPosition(sf::Vector2f(width - 300, 60));
+
+
+	control[2].setFont(font);
+	control[2].setFillColor(sf::Color::Cyan);
+	control[2].setString("R para resetear el nivel");
+	control[2].setCharacterSize(15);
+	control[2].setPosition(sf::Vector2f(width - 300, 90));
+
+	control[3].setFont(font);
+	control[3].setFillColor(sf::Color::Cyan);
+	control[3].setString("P para volver al menu");
+	control[3].setCharacterSize(15);
+	control[3].setPosition(sf::Vector2f(width - 300, 110));
+
+	control[3].setFont(font);
+	control[3].setFillColor(sf::Color::Cyan);
+	control[3].setString("ENTER para interactuar");
+	control[3].setCharacterSize(15);
+	control[3].setPosition(sf::Vector2f(width - 300, 130));
 
 
 	selectedItemIndex = 0;
@@ -52,7 +78,11 @@ void Menu::draw(sf::RenderWindow& window)
 	{
 		window.draw(menu[i]);
 	}
-	window.draw(control);
+
+	for (int i = 0; i < MAX_NUMBER_OF_CONTROL; i++)
+	{
+		window.draw(control[i]);
+	}
 
 }
 
