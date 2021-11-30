@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #include<iostream>
 
@@ -23,6 +24,7 @@ private:
 	Tilemap* TM;
 	Menu* menu;
 	credits* credit;
+	Music music;
 	bool check;
 	//vector<int> test;
 	

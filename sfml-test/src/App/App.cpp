@@ -19,9 +19,15 @@ void App::LoopApp()
 {
     sf::RenderWindow window(sf::VideoMode(800, 450), "Sokoban");
     sf::Event event;
+    
+    if (!music.openFromFile("res/Wind.ogg"))
+    {
+        std::cout << "error" << std::endl;
+    }
+    music.play();
+    
     TM->levelOne(player);
     
-  //  sf::Event event2;
 
     while (window.isOpen())
     {
