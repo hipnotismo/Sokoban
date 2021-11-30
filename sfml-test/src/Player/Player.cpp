@@ -74,6 +74,10 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 	{
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
+			if (board[posY][posX - 2].id != 0 && posX - 1 == blocks[i]->getPositionX() && posY == blocks[i]->getPositionY())
+			{
+				canMove = false;
+			}
 			if (posX - 1 == blocks[i]->getPositionX() && posY == blocks[i]->getPositionY() && board[blocks[i]->getPositionY()][blocks[i]->getPositionX()-1].id == 0 && canMove)
 			{
 				blocks[i]->setStrideX(-1);
@@ -90,6 +94,10 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 	{
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
+			if (board[posY][posX+2].id!=0&& posX + 1 == blocks[i]->getPositionX() && posY == blocks[i]->getPositionY())
+			{
+				canMove = false;
+			}
 			if (posX+1==blocks[i]->getPositionX()&&posY==blocks[i]->getPositionY()&&board[blocks[i]->getPositionY()][blocks[i]->getPositionX()+1].id==0&&canMove)
 			{
 				blocks[i]->setStrideX(1);
@@ -106,6 +114,11 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 	{
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
+			if (board[posY-2][posX].id != 0 && posY - 1 == blocks[i]->getPositionY() && posX == blocks[i]->getPositionX())
+			{
+				canMove = false;
+			}
+
 			if (posX == blocks[i]->getPositionX() && posY-1 == blocks[i]->getPositionY() && board[blocks[i]->getPositionY()-1][blocks[i]->getPositionX()].id == 0 && canMove)
 			{
 				blocks[i]->setStrideY(-1);
@@ -123,6 +136,10 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
+			if (board[posY + 2][posX].id != 0 && posY + 1 == blocks[i]->getPositionY() && posX == blocks[i]->getPositionX())
+			{
+				canMove = false;
+			}
 			if (posX == blocks[i]->getPositionX() && posY + 1 == blocks[i]->getPositionY()&&board[blocks[i]->getPositionY() + 1][blocks[i]->getPositionX()].id == 0 && canMove)
 			{
 				blocks[i]->setStrideY(1);
@@ -134,8 +151,6 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 			canMove = false;
 		}
 	}	
-
-
 } 
 
 
