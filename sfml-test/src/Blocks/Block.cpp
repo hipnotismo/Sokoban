@@ -34,7 +34,7 @@ void Block::setVPosition(float x1, float y1)
 	pos.x = x1;
 	pos.y = y1;
 	sprite.setPosition(x1, y1);
-
+	
 }
 void Block::setVPosition(Vector2f f)
 {
@@ -50,6 +50,7 @@ void Block::setPosition(int x, int y)
 {
 	posX = x;
 	posY = y;
+	sprite.setPosition(x, y);
 }
 
 int Block::getPositionX()
@@ -60,6 +61,14 @@ int Block::getPositionX()
 int Block::getPositionY()
 {
 	return posY;
+}
+void Block::setStrideY(int y)
+{
+	posY = posY + y;
+}
+void Block::setStrideX(int x)
+{
+	posX = posX + x;
 }
 Sprite Block::getSprite() {
 	return sprite;

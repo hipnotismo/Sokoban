@@ -105,6 +105,7 @@ void App::Input()
     case Screens::Credits:
         break;
     case Screens::Gameplay:
+        player->move(TM->board,TM->blocks);
         break;
     case Screens::GameOver:
         break;

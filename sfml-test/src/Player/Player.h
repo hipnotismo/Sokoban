@@ -1,11 +1,9 @@
 #pragma once
 
 #include <iostream>
-
 #include <SFML/Graphics.hpp>
-
-#include "Blocks/Block.h"
 #include "Tilemap/tilemap.h"
+class Block;
 
 using namespace std;
 using namespace sf;
@@ -31,6 +29,6 @@ public:
 	int getPositionY();
 
 	void draw(RenderWindow& win);
-	void move();
+	void move(Tile board[9][18], Block* blocks[]);
 };
 

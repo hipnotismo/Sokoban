@@ -72,7 +72,6 @@ void Tilemap::LoadSprites()
 
 }
 
-
 void Tilemap::draw(sf::RenderWindow& win)
 {
 	for (int i = 0; i < maxTLY; i++) {
@@ -83,6 +82,7 @@ void Tilemap::draw(sf::RenderWindow& win)
 
 	win.draw(blocks[0]->getSprite());
 }
+
 
 void Tilemap::clearBoard()
 {

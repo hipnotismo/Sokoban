@@ -18,9 +18,6 @@ using namespace sf;
 	// 5- Down
 	// 6- Objective
 	//-----------
-
-class Tilemap{
-private:
 	struct Tile
 	{
 		sf::RectangleShape rec; 
@@ -28,12 +25,15 @@ private:
 		bool winSlot;
 		sf::Sprite sprite;
 	};
+
+class Tilemap{
+private:
 	const int maxTLX = 18;
 	const int maxTLY = 9;
 	sf::Texture atlas[7];
 
-	Block* blocks[10];
 public:
+	Block* blocks[10];
 	Tile board[9][18]; //Tilemap is x = 18, y = 9 TOTAL: 162
 	Tilemap();
 	~Tilemap();
@@ -41,6 +41,7 @@ public:
 	void LoadAtlas();
 	void LoadSprites();
 	void draw(sf::RenderWindow& win);
+
 
 	void clearBoard();
 	void levelOne(Player* p1);

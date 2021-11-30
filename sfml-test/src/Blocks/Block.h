@@ -24,6 +24,8 @@ public:
 	void setPosition(int x, int y);
 	int getPositionX();
 	int getPositionY();
+	void setStrideY(int y);
+	void setStrideX(int x);
 
 	Sprite getSprite();
 
