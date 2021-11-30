@@ -26,6 +26,7 @@
     <ClCompile Include="src\Menu\menu.cpp" />
     <ClCompile Include="src\Player\player.cpp" />
     <ClCompile Include="src\Tilemap\tilemap.cpp" />
+    <ClCompile Include="src\Timer\Theomer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App\app.h" />
@@ -34,6 +35,7 @@
     <ClInclude Include="src\Menu\menu.h" />
     <ClInclude Include="src\Player\player.h" />
     <ClInclude Include="src\Tilemap\tilemap.h" />
+    <ClInclude Include="src\Timer\theomer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

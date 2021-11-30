@@ -1,13 +1,14 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
+using namespace std;
 using namespace sf;
 
 class Block {
 private:
 	RectangleShape rec;
-	Vector2f pos;
 	int posX;
 	int posY;
 	Texture texture;
@@ -15,15 +16,13 @@ private:
 	bool active;
 public:
 	Block();
-	Block(int x1, int y1);
 	~Block();
-	void setVPosition(float x1, float y1);
-	void setVPosition(Vector2f f);
-	Vector2f getVPosition();
-
+	
 	void setPosition(int x, int y);
 	int getPositionX();
 	int getPositionY();
+	void setStrideY(int y);
+	void setStrideX(int x);
 
 	Sprite getSprite();
 

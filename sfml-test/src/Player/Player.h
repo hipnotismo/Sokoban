@@ -1,11 +1,12 @@
 #pragma once
 
 #include <iostream>
-
 #include <SFML/Graphics.hpp>
-
-#include "Blocks/Block.h"
 #include "Tilemap/tilemap.h"
+#include "Timer/theomer.h"
+
+
+class Block;
 
 using namespace std;
 using namespace sf;
@@ -18,6 +19,12 @@ private:
 	int posY;
 	Texture texture;
 	Sprite sprite;
+
+	bool canMove = true;
+	float delayCanMove;
+	float auxDelayCanMove;
+
+	
 public:
 	Player();
 	~Player();
@@ -31,6 +38,6 @@ public:
 	int getPositionY();
 
 	void draw(RenderWindow& win);
-	void move();
+	void move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer clock);
 };
 
