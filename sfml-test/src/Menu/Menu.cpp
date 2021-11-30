@@ -23,6 +23,15 @@ Menu::Menu(float width, float height)
 	menu[2].setString("Exit");
 	menu[2].setPosition(sf::Vector2f(width / 5, height / (MAX_NUMBER_OF_ITEMS + 1) * 3));
 
+
+
+	control.setFont(font);
+	control.setFillColor(sf::Color::Red);
+	control.setString("W y S para navegar ENTER para interactuar");
+	control.setCharacterSize(15);
+	control.setPosition(sf::Vector2f(width - 300 ,  30 ));
+
+
 	selectedItemIndex = 0;
 	texture.loadFromFile("res/background.png");
 	sprite.setTexture(texture);
@@ -43,6 +52,7 @@ void Menu::draw(sf::RenderWindow& window)
 	{
 		window.draw(menu[i]);
 	}
+	window.draw(control);
 
 }
 

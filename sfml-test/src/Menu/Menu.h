@@ -13,6 +13,7 @@ private:
 	int selectedItemIndex;
 	sf::Font font;
 	sf::Text menu[MAX_NUMBER_OF_ITEMS];
+	sf::Text control;
 	Texture texture;
 	Sprite sprite;
 public:
