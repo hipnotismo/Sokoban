@@ -6,6 +6,8 @@ App::App()
     player = new Player();
     TM = new Tilemap();
     menu = new Menu(800, 450);
+    credit = new credits(800, 450);
+    check = true;
 }
 
 App::~App()
@@ -18,6 +20,13 @@ void App::LoopApp()
 
     sf::RenderWindow window(sf::VideoMode(800, 450), "Sokoban");
     sf::Event event;
+
+    if (!music.openFromFile("res/Wind.ogg"))
+    {
+        std::cout << "error" << std::endl;
+    }
+    music.play();
+
     TM->levelOne(player);
 
     while (window.isOpen())
@@ -48,7 +57,8 @@ void App::LoopApp()
                         currentScreen = Screens::Gameplay;
                         break;
                     case 1:
-                        std::cout << "Option button has been pressed" << std::endl;
+                        currentScreen = Screens::Credits;
+                        check = !check;
                         break;
                     case 2:
                         window.close();
@@ -84,6 +94,8 @@ void App::Draw(sf::RenderWindow &win)
         menu->draw(win);
         break;
     case Screens::Credits:
+        credit->draw(win);
+
         break;
     case Screens::Gameplay:
         TM->draw(win);
@@ -104,6 +116,11 @@ void App::Input(RenderWindow& win)
      
         break;
     case Screens::Credits:
+        if (menu->GetPressedItem() && check)
+        {
+            currentScreen = Screens::Menu;
+
+        }
         break;
     case Screens::Gameplay:
         player->move(TM->board,TM->blocks, win, clock);
