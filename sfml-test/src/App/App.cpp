@@ -57,6 +57,10 @@ void App::LoopApp()
                 case sf::Keyboard::S:
                     menu->MoveDown();
                     break;
+                case sf::Keyboard::P:
+                    currentScreen = Screens::Menu;
+                    music2.setVolume(0);
+                    break;
 
                 case sf::Keyboard::Return:
                     switch (menu->GetPressedItem())

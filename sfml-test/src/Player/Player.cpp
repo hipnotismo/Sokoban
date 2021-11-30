@@ -64,6 +64,10 @@ void Player::draw(RenderWindow& win)
 	
 	sprite.setPosition((posX*40)+40,(posY*40)+25);
 	win.draw(sprite);
+	if (!pause)
+	{
+
+	}
 }
 
 void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer clock)
