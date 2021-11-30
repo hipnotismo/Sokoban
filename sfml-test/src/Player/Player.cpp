@@ -82,7 +82,7 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 		canMove = true;
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
@@ -119,7 +119,7 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 		}
 
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
@@ -150,7 +150,7 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 		}
 
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
@@ -187,7 +187,7 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 		}
 
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks

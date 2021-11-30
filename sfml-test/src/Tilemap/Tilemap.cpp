@@ -7,7 +7,7 @@ Tilemap::Tilemap()
 	{
 		blocks[i] = new Block();
 	}
-	level = 3;
+	level = 1;
 
 	initTile();
 	LoadAtlas();

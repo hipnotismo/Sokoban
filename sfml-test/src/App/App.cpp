@@ -33,8 +33,7 @@ void App::LoopApp()
     music1.play();
     music2.play();
     music2.setVolume(0);
-    //TM->levelOne(player);
-    //TM->levelTwo(player);
+    
 
     while (window.isOpen())
     {    
@@ -156,7 +155,7 @@ void App::Update()
         break;
     case 4:
         TM->setLevel(1);
-        currentScreen = Screens::Gameplay;
+        currentScreen = Screens::Menu;
         break;
     default:
         break;
