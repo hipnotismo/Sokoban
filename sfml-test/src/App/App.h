@@ -5,6 +5,7 @@
 #include "Player/player.h"
 #include "Tilemap/tilemap.h"
 #include "Menu/menu.h"
+#include "Timer/theomer.h"
 
 using namespace sf;
 
@@ -19,6 +20,7 @@ private:
 	Player* player;
 	Tilemap* TM;
 	Menu* menu;
+	Theomer clock; //TheoLeyenda:tm: gracias guapo <3
 	//vector<int> test;
 	
 	

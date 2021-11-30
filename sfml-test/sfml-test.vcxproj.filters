@@ -39,6 +39,9 @@
     <ClCompile Include="src\Menu\menu.cpp">
       <Filter>src\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="src\Timer\Theomer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App\app.h">
@@ -56,5 +59,6 @@
     <ClInclude Include="src\Menu\menu.h">
       <Filter>src\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="src\Timer\theomer.h" />
   </ItemGroup>
 </Project>

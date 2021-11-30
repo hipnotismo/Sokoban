@@ -10,7 +10,10 @@ Player::Player()
 	posY = 0;
 	texture.loadFromFile("res/CloakGuy.png");
 	sprite.setTexture(texture);
+
 	canMove = true;
+	delayCanMove = 0.5f;
+	auxDelayCanMove = delayCanMove;
 }
 
 Player::~Player()
@@ -55,44 +58,80 @@ void Player::draw(RenderWindow& win)
 	win.draw(sprite);
 }
 
-void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win)
+void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer clock)
 {
-
+	if (delayCanMove>0)
+	{
+		delayCanMove = delayCanMove - clock.deltaTime();
+		
+	}
+	else {
+		delayCanMove = auxDelayCanMove;
+		canMove = true;
+	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
+		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
+		{
+			if (posX - 1 == blocks[i]->getPositionX() && posY == blocks[i]->getPositionY() && board[blocks[i]->getPositionY()][blocks[i]->getPositionX()-1].id == 0 && canMove)
+			{
+				blocks[i]->setStrideX(-1);
+			}
+		}
+
 		if (canMove && posX > 0&&board[posY][posX-1].id==0) {
 			posX--;
-			//If you can move AND you're withing the Tilemap AND the tile's ID is walkable (0).
+			//If you can move AND you're within the Tilemap AND the tile's ID is walkable (0).
+			canMove = false;
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
 		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
 		{
-			if (blocks[i]->getPositionX() == posX+1 && board[posY][posX+2].id!=0)
+			if (posX+1==blocks[i]->getPositionX()&&posY==blocks[i]->getPositionY()&&board[blocks[i]->getPositionY()][blocks[i]->getPositionX()+1].id==0&&canMove)
 			{
-				canMove = false;
-			}
-			else {
 				blocks[i]->setStrideX(1);
 			}
 		}
 
 		if (canMove && posX < 17 && board[posY][posX + 1].id == 0) {
 			posX++;
+			canMove = false;
+			cout << "BLOCK X:" << blocks[0]->getPositionX() << " X Player:" << posX << endl;
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
+		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
+		{
+			if (posX == blocks[i]->getPositionX() && posY-1 == blocks[i]->getPositionY() && board[blocks[i]->getPositionY()-1][blocks[i]->getPositionX()].id == 0 && canMove)
+			{
+				blocks[i]->setStrideY(-1);
+				//If there's a block to the player's RIGHT AND b&p are in tha same Y AND the board is still walkable AND can move
+			}
+		}
+
 		if (canMove && posY > 0 && board[posY-1][posX].id == 0) {
 			posY--;	
+			canMove = false;
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
+
+		for (int i = 0; i < 10; i++) //FOR checking all 10 moveable blocks
+		{
+			if (posX == blocks[i]->getPositionX() && posY + 1 == blocks[i]->getPositionY()&&board[blocks[i]->getPositionY() + 1][blocks[i]->getPositionX()].id == 0 && canMove)
+			{
+				blocks[i]->setStrideY(1);
+			}
+		}
+
 		if (canMove && posY < 8&&board[posY + 1][posX].id == 0) {
-			posY++;				
+			posY++;
+			canMove = false;
 		}
 	}	
 

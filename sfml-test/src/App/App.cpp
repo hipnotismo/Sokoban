@@ -15,14 +15,14 @@ App::~App()
 
 void App::LoopApp()
 {
+
     sf::RenderWindow window(sf::VideoMode(800, 450), "Sokoban");
     sf::Event event;
     TM->levelOne(player);
-    
-  //  sf::Event event2;
 
     while (window.isOpen())
     {
+        clock.tick();
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
@@ -68,6 +68,7 @@ void App::LoopApp()
 
         }
 
+
         Input(window);
         Draw(window);
 
@@ -105,7 +106,7 @@ void App::Input(RenderWindow& win)
     case Screens::Credits:
         break;
     case Screens::Gameplay:
-        player->move(TM->board,TM->blocks, win);
+        player->move(TM->board,TM->blocks, win, clock);
         break;
     case Screens::GameOver:
         break;

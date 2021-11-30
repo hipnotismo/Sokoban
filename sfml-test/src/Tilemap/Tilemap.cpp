@@ -62,12 +62,14 @@ void Tilemap::LoadSprites()
 			case 5:
 				board[i][j].sprite.setTexture(atlas[5]); //down
 				break;
-			case 6:
-				board[i][j].sprite.setTexture(atlas[6]); //winslot
-				break;
 			default:
 				board[i][j].sprite.setTexture(atlas[0]);
 				break;
+			}
+
+			if (board[i][j].winSlot)
+			{
+				board[i][j].sprite.setTexture(atlas[6]);
 			}
 		}
 	}
@@ -134,7 +136,7 @@ void Tilemap::levelOne(Player* p1)
 		board[6][11].id = 3;
 		board[6][12].id = 3;
 
-		board[2][12].id = 6; //WINSLOT
+		board[2][12].id = 0; //WINSLOT
 		board[2][12].winSlot = true;
 
 		board[3][5].id = 0;
