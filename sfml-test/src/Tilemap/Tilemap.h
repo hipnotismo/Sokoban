@@ -37,6 +37,7 @@ private:
 	const int maxTLX = 18;
 	const int maxTLY = 9;
 	sf::Texture atlas[7];
+	int level;
 
 public:
 	Block* blocks[10];
@@ -47,15 +48,18 @@ public:
 	void LoadAtlas();
 	void LoadSprites();
 	void draw(sf::RenderWindow& win);
+	void input(Player* p1);
 
+	void levelController(Player* p1);
+	int getLevel();
 
 	void clearBoard();
 	void levelOne(Player* p1);
-	void levelOneWincon();
+	void levelOneWincon(Player* p1);
 	void levelTwo(Player* p1);
-	void levelTwoWincon();
+	void levelTwoWincon(Player* p1);
 	void levelThree(Player* p1);
-	void lvlThreeWincon();
+	void levelThreeWincon(Player* p1);
 	
 
 

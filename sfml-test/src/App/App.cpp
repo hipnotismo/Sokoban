@@ -33,7 +33,7 @@ void App::LoopApp()
     music1.play();
     music2.play();
     music2.setVolume(0);
-    TM->levelOne(player);
+    //TM->levelOne(player);
     //TM->levelTwo(player);
 
     while (window.isOpen())
@@ -66,6 +66,7 @@ void App::LoopApp()
                     switch (menu->GetPressedItem())
                     {
                     case 0:
+                        TM->levelController(player);
                         currentScreen = Screens::Gameplay;
                         break;
                     case 1:
@@ -90,6 +91,7 @@ void App::LoopApp()
 
         Music(window);
         Input(window);
+        Update();
         Draw(window);
     }
 }
@@ -130,8 +132,27 @@ void App::Input(RenderWindow& win)
         break;
     case Screens::Gameplay:
         player->move(TM->board,TM->blocks, win, clock);
+        TM->input(player);
         break;
     case Screens::GameOver:
+        break;
+    default:
+        break;
+    }
+}
+
+void App::Update()
+{
+    switch (TM->getLevel())
+    {
+    case 1:
+        TM->levelOneWincon(player);
+        break;
+    case 2:
+        TM->levelTwoWincon(player);
+        break;
+    case 3:
+        TM->levelThreeWincon(player);
         break;
     default:
         break;

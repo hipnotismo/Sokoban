@@ -38,6 +38,7 @@ public:
 	void LoopApp();
 	void Draw(sf::RenderWindow &win);
 	void Input(RenderWindow &win);
+	void Update();
 	void Music(RenderWindow& win);
 
 };

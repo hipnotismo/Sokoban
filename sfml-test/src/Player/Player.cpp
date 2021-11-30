@@ -17,7 +17,7 @@ Player::Player()
 		std::cout << "error" << std::endl;
 	}
 	canMove = true;
-	delayCanMove = 0.5f;
+	delayCanMove = 0.3f;
 	auxDelayCanMove = delayCanMove;
 	sound.setBuffer(buffer);
 	sound.setVolume(10);

@@ -7,6 +7,7 @@ Tilemap::Tilemap()
 	{
 		blocks[i] = new Block();
 	}
+	level = 1;
 
 	initTile();
 	LoadAtlas();
@@ -94,6 +95,48 @@ void Tilemap::draw(sf::RenderWindow& win)
 
 }
 
+void Tilemap::input(Player* p1)
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+		switch (level)
+		{
+		case 1:
+			levelOne(p1);
+			break;
+		case 2:
+			levelTwo(p1);
+			break;
+		case 3:
+			levelThree(p1);
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+void Tilemap::levelController(Player* p1)
+{
+	switch (level)
+	{
+	case 1:
+		levelOne(p1);
+		break;
+	case 2:
+		levelTwo(p1);
+		break;
+	case 3:
+		levelThree(p1);
+		break;
+	default:
+		break;
+	}
+}
+
+int Tilemap::getLevel()
+{
+	return level;
+}
 
 void Tilemap::clearBoard()
 {
@@ -163,11 +206,13 @@ void Tilemap::levelOne(Player* p1)
 	blocks[0]->setPosition(board[3][9].pos.x, board[3][9].pos.y);
 	blocks[0]->setActive(true);
 }
-void Tilemap::levelOneWincon()
+void Tilemap::levelOneWincon(Player* p1)
 {
 	if (board[2][12].pos.x == blocks[0]->getPositionX()&& board[2][12].pos.y == blocks[0]->getPositionY())
 	{
 		cout << "Win!" << endl;
+		level++;
+		levelController(p1);
 	}
 }
 
@@ -221,11 +266,13 @@ void Tilemap::levelTwo(Player* p1)
 	blocks[0]->setActive(true);
 
 }
-void Tilemap::levelTwoWincon()
+void Tilemap::levelTwoWincon(Player* p1)
 {
 	if (board[4][10].pos.x == blocks[0]->getPositionX() && board[4][10].pos.y == blocks[0]->getPositionY())
 	{
 		cout << "Win!" << endl;
+		level++;
+		levelController(p1);
 	}
 }
 
@@ -304,8 +351,7 @@ void Tilemap::levelThree(Player* p1)
 	blocks[1]->setPosition(board[6][9].pos.x, board[6][9].pos.y);
 	blocks[1]->setActive(true);
 }
-
-void Tilemap::lvlThreeWincon()
+void Tilemap::levelThreeWincon(Player* p1)
 {
 	bool win1 = false;
 	bool win2 = false;
@@ -313,13 +359,15 @@ void Tilemap::lvlThreeWincon()
 	if (board[1][12].pos.x == blocks[0]->getPositionX() && board[1][12].pos.y == blocks[0]->getPositionY() || board[2][12].pos.x == blocks[0]->getPositionX() && board[2][12].pos.y == blocks[0]->getPositionY()) {
 		win1 = true;
 	}
-	if (board[1][12].pos.x == blocks[0]->getPositionX() && board[1][12].pos.y == blocks[0]->getPositionY() || board[2][12].pos.x == blocks[0]->getPositionX() && board[2][12].pos.y == blocks[0]->getPositionY()) {
+	if (board[1][12].pos.x == blocks[1]->getPositionX() && board[1][12].pos.y == blocks[1]->getPositionY() || board[2][12].pos.x == blocks[1]->getPositionX() && board[2][12].pos.y == blocks[1]->getPositionY()) {
 		win2 = true;
 	}
 
 	if (win1&&win2)
 	{
 		cout << "Win!" << endl;
+		level++;
+		levelController(p1);
 	}
 
 }
