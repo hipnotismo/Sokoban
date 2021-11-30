@@ -13,7 +13,6 @@
 
 using namespace sf;
 
-#define MAX_NUMBER_OF_ITEMS 2
 
 class App {
 private:
@@ -32,7 +31,8 @@ private:
 	Theomer clock;
 
 	sf::Font font;
-	sf::Text UI[MAX_NUMBER_OF_ITEMS];
+	sf::Text UI1;
+	sf::Text UI2;
 
 	bool check;
 	//vector<int> test;

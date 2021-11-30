@@ -14,16 +14,15 @@ App::App()
         // handle error
     }
 
-    UI[0].setFont(font);
-    UI[0].setFillColor(sf::Color::Cyan);
-    UI[0].setString("P para menu");
-    UI[0].setPosition(sf::Vector2f(500, 10));
+    UI1.setFont(font);
+    UI1.setFillColor(sf::Color::Cyan);
+    UI1.setString("P para menu");
+    UI1.setPosition(sf::Vector2f(500, 10));
 
-    UI[1].setFont(font);
-    UI[1].setFillColor(sf::Color::Cyan);
-    UI[1].setString("R para reinicio");
-    UI[1].setPosition(sf::Vector2f(500, 100));
-
+    UI2.setFont(font);
+    UI2.setFillColor(sf::Color::Cyan);
+    UI2.setString("R para reinicio");
+    UI2.setPosition(sf::Vector2f(500, 100));
 
 }
 
@@ -78,7 +77,10 @@ void App::LoopApp()
                     currentScreen = Screens::Menu;
                     music2.setVolume(0);
                     break;
-
+                case sf::Keyboard::Escape:
+                    currentScreen = Screens::Menu;
+                    music2.setVolume(0);
+                    break;
                 case sf::Keyboard::Return:
                     switch (menu->GetPressedItem())
                     {
@@ -125,11 +127,9 @@ void App::Draw(sf::RenderWindow &win)
         break;
     case Screens::Gameplay:
         TM->draw(win);
-        player->draw(win);
-        for (int i = 0; i < MAX_NUMBER_OF_ITEMS; i++)
-        {
-            window.draw(UI[i]);
-        }
+        player->draw(win);       
+        window.draw(UI1);   
+        window.draw(UI2);
         break;
     case Screens::GameOver:
         break;
