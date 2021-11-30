@@ -9,6 +9,7 @@
 #include "Tilemap/tilemap.h"
 #include "Menu/menu.h"
 #include "Credits/credits.h"
+#include "Timer/theomer.h"
 
 using namespace sf;
 
@@ -25,6 +26,7 @@ private:
 	Menu* menu;
 	credits* credit;
 	Music music;
+	Theomer clock;
 	bool check;
 	//vector<int> test;
 	
@@ -34,6 +36,6 @@ public:
 	~App();
 	void LoopApp();
 	void Draw(sf::RenderWindow &win);
-	void Input();
+	void Input(RenderWindow &win);
 
 };

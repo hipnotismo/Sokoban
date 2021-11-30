@@ -22,6 +22,9 @@
     <Filter Include="src\Credits">
       <UniqueIdentifier>{47a7dbb6-2bee-441c-b6ab-82fcc41aa775}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Timer">
+      <UniqueIdentifier>{2502a80d-6dee-4c28-91fd-30a27e68e0c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -45,6 +48,9 @@
     <ClCompile Include="src\Credits\credits.cpp">
       <Filter>src\Credits</Filter>
     </ClCompile>
+    <ClCompile Include="src\Timer\Theomer.cpp">
+      <Filter>src\Timer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App\app.h">
@@ -64,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="src\Credits\credits.h">
       <Filter>src\Credits</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Timer\theomer.h">
+      <Filter>src\Timer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
