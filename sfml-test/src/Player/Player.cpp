@@ -11,9 +11,16 @@ Player::Player()
 	texture.loadFromFile("res/CloakGuy.png");
 	sprite.setTexture(texture);
 
+
+	if (!buffer.loadFromFile("res/move.wav"))
+	{
+		std::cout << "error" << std::endl;
+	}
 	canMove = true;
 	delayCanMove = 0.5f;
 	auxDelayCanMove = delayCanMove;
+	sound.setBuffer(buffer);
+	sound.setVolume(10);
 }
 
 Player::~Player()
@@ -77,6 +84,7 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 			if (board[posY][posX - 2].id != 0 && posX - 1 == blocks[i]->getPositionX() && posY == blocks[i]->getPositionY())
 			{
 				canMove = false;
+
 			}
 			if (posX - 1 == blocks[i]->getPositionX() && posY == blocks[i]->getPositionY() && board[blocks[i]->getPositionY()][blocks[i]->getPositionX()-1].id == 0 && canMove)
 			{
@@ -88,7 +96,9 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 			posX--;
 			//If you can move AND you're within the Tilemap AND the tile's ID is walkable (0).
 			canMove = false;
+			sound.play();
 		}
+
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
@@ -101,6 +111,7 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 			if (posX+1==blocks[i]->getPositionX()&&posY==blocks[i]->getPositionY()&&board[blocks[i]->getPositionY()][blocks[i]->getPositionX()+1].id==0&&canMove)
 			{
 				blocks[i]->setStrideX(1);
+
 			}
 		}
 
@@ -108,7 +119,9 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 			posX++;
 			canMove = false;
 			cout << "BLOCK X:" << blocks[0]->getPositionX() << " X Player:" << posX << endl;
+			sound.play();
 		}
+
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
@@ -129,7 +142,9 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 		if (canMove && posY > 0 && board[posY-1][posX].id == 0) {
 			posY--;	
 			canMove = false;
+			sound.play();
 		}
+
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
@@ -149,7 +164,9 @@ void Player::move(Tile board[9][18], Block* blocks[], RenderWindow& win, Theomer
 		if (canMove && posY < 8&&board[posY + 1][posX].id == 0) {
 			posY++;
 			canMove = false;
+			sound.play();
 		}
+
 	}	
 } 
 

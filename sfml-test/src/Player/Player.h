@@ -1,10 +1,12 @@
 #pragma once
 
 #include <iostream>
+
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+
 #include "Tilemap/tilemap.h"
 #include "Timer/theomer.h"
-
 
 class Block;
 
@@ -19,6 +21,9 @@ private:
 	int posY;
 	Texture texture;
 	Sprite sprite;
+
+	SoundBuffer buffer;
+	Sound sound;
 
 	bool canMove = true;
 	float delayCanMove;

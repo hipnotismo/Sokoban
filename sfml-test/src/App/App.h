@@ -25,7 +25,8 @@ private:
 	Tilemap* TM;
 	Menu* menu;
 	credits* credit;
-	Music music;
+	Music music1;
+	Music music2;
 	Theomer clock;
 	bool check;
 	//vector<int> test;
@@ -37,5 +38,6 @@ public:
 	void LoopApp();
 	void Draw(sf::RenderWindow &win);
 	void Input(RenderWindow &win);
+	void Music(RenderWindow& win);
 
 };

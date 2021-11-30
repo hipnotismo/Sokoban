@@ -21,16 +21,23 @@ void App::LoopApp()
     sf::RenderWindow window(sf::VideoMode(800, 450), "Sokoban");
     sf::Event event;
 
-    if (!music.openFromFile("res/Wind.ogg"))
+    if (!music1.openFromFile("res/Wind.ogg"))
     {
         std::cout << "error" << std::endl;
     }
-    music.play();
 
+    if (!music2.openFromFile("res/Drip.ogg"))
+    {
+        std::cout << "error" << std::endl;
+    }
+    music1.play();
+    music2.play();
+    music2.setVolume(0);
     TM->levelOne(player);
 
     while (window.isOpen())
-    {
+    {    
+
         clock.tick();
         while (window.pollEvent(event))
         {
@@ -64,24 +71,21 @@ void App::LoopApp()
                         window.close();
                         break;
                     }
-
                     break;
                 }
 
                 break;
             case sf::Event::Closed:
                 window.close();
-
                 break;
 
             }
 
         }
 
-
+        Music(window);
         Input(window);
         Draw(window);
-
     }
 }
 
@@ -89,13 +93,11 @@ void App::Draw(sf::RenderWindow &win)
 {
     win.clear();
     switch (currentScreen) {
-    case Screens::Menu:
-       
+    case Screens::Menu:      
         menu->draw(win);
         break;
     case Screens::Credits:
         credit->draw(win);
-
         break;
     case Screens::Gameplay:
         TM->draw(win);
@@ -119,13 +121,33 @@ void App::Input(RenderWindow& win)
         if (menu->GetPressedItem() && check)
         {
             currentScreen = Screens::Menu;
-
         }
         break;
     case Screens::Gameplay:
         player->move(TM->board,TM->blocks, win, clock);
         break;
     case Screens::GameOver:
+        break;
+    default:
+        break;
+    }
+}
+
+void App::Music(RenderWindow& win) {
+
+    switch (currentScreen) {
+    case Screens::Menu:
+        break;
+    case Screens::Credits:
+
+        break;
+    case Screens::Gameplay:
+        music1.setVolume(20);
+        music2.setVolume(50);
+
+        break;
+    case Screens::GameOver:
+
         break;
     default:
         break;
