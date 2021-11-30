@@ -17,6 +17,8 @@ void Tilemap::initTile()
 {
 	for (int i = 0; i < maxTLY; i++) {
 		for (int j = 0; j < maxTLX; j++) {
+			board[i][j].pos.x = j;
+			board[i][j].pos.y = i;
 			board[i][j].rec.setSize(sf::Vector2f(40.0f, 40.0f));
 			board[i][j].rec.setPosition(40 + 40 * j, 25 + 40 * i);
 			board[i][j].sprite.setPosition(Vector2f(board[i][j].rec.getPosition()));
@@ -146,9 +148,9 @@ void Tilemap::levelOne(Player* p1)
 	} //ID SETTINGS
 	LoadSprites();
 
-	Vector2f tempVec = board[3][5].rec.getPosition();
 	Vector2f tempVec2 = board[3][9].rec.getPosition();
-	p1->setPosition(static_cast<int>(tempVec.x), static_cast<int>(tempVec.y));
-	blocks[0]->setPosition(static_cast<int>(tempVec2.x), static_cast<int>(tempVec2.y));
+	p1->setPosition(board[3][5].pos.x, board[3][5].pos.y);
+
+	blocks[0]->setPosition(board[3][9].pos.x, board[3][9].pos.y);
 	blocks[0]->setActive(true);
 }

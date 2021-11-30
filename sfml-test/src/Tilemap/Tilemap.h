@@ -18,9 +18,15 @@ using namespace sf;
 	// 5- Down
 	// 6- Objective
 	//-----------
+
+struct Vector2K{
+	int x;
+	int y;
+};
 	struct Tile
 	{
 		sf::RectangleShape rec; 
+		Vector2K pos;
 		int id;
 		bool winSlot;
 		sf::Sprite sprite;
