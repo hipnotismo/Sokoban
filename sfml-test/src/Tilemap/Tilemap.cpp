@@ -157,9 +157,76 @@ void Tilemap::levelOne(Player* p1)
 	} //ID SETTINGS
 	LoadSprites();
 
-	Vector2f tempVec2 = board[3][9].rec.getPosition();
+
 	p1->setPosition(board[3][5].pos.x, board[3][5].pos.y);
 
 	blocks[0]->setPosition(board[3][9].pos.x, board[3][9].pos.y);
 	blocks[0]->setActive(true);
+}
+
+void Tilemap::levelOneWincon()
+{
+	if (board[2][12].pos.x == blocks[0]->getPositionX()&& board[2][12].pos.y == blocks[0]->getPositionY())
+	{
+		cout << "Win!" << endl;
+	}
+}
+
+void Tilemap::levelTwo(Player* p1)
+{
+	clearBoard();
+	{
+		board[2][4].id = 1;
+		board[2][5].id = 5;
+		board[2][6].id = 5;
+		board[2][7].id = 5;
+		board[2][8].id = 1;
+
+		board[3][4].id = 4;
+		board[3][8].id = 1;
+		board[3][9].id = 5;
+		board[3][10].id = 5;
+		board[3][11].id = 1;
+
+		board[4][4].id = 4;
+		board[4][11].id = 2;
+
+		board[5][4].id = 1;
+		board[5][5].id = 3;
+		board[5][6].id = 3;
+		board[5][7].id = 3;
+		board[5][8].id = 3;
+		board[5][9].id = 3;
+		board[5][10].id = 3;
+		board[5][11].id = 1;
+
+
+		board[3][5].id = 0;
+		board[3][6].id = 0;
+		board[3][7].id = 0;
+		board[4][5].id = 0;
+		board[4][6].id = 0;
+		board[4][7].id = 0;
+		board[4][8].id = 0;
+		board[4][8].id = 0;
+		board[4][9].id = 0;
+
+		board[4][10].id = 0;
+		board[4][10].winSlot = true;
+	}
+	LoadSprites();
+
+	p1->setPosition(board[4][9].pos.x, board[4][9].pos.y);
+
+	blocks[0]->setPosition(board[4][7].pos.x, board[4][7].pos.y);
+	blocks[0]->setActive(true);
+
+}
+
+void Tilemap::levelTwoWincon()
+{
+	if (board[4][10].pos.x == blocks[0]->getPositionX() && board[4][10].pos.y == blocks[0]->getPositionY())
+	{
+		cout << "Win!" << endl;
+	}
 }
