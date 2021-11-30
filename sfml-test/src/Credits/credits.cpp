@@ -11,7 +11,7 @@ credits::credits(float width, float height)
 
 	credit[0].setFont(font);
 	credit[0].setFillColor(sf::Color::Red);
-	credit[0].setString("Creado por Martin Concetti y Matias Karplus");
+	credit[0].setString("Creado por Martin Concetti y Matias Karplus. V0.8");
 	credit[0].setPosition(sf::Vector2f(width / 5, height / (MAX_NUMBER_OF_ITEMS + 8) * 1));
 
 	credit[1].setFont(font);
