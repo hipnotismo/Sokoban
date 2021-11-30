@@ -1,14 +1,23 @@
 changelog
 ---------
 
-Release actual:    Sokoban 0.7 (29 Noviembre 2021)
+Release actual:    Sokoban 1.0 (30 Noviembre 2021)
+-------------------------------------------------------------------------
+Cambios:
+-Movimiento del jugador
+-Movimiento de las cajas
+-Cambio de nivels
+-Reseto de nivel
+-Condicion de vistoria
+
+-------------------------------------------------------------------------
+Release :	Sokoban 0.7 (29 Noviembre 2021)
 -------------------------------------------------------------------------
 Cambios:
 -Implementacion de LFS.
 -Imagen de fondo.
 -Archivos BATCH para release y debug.
 -Pantalla de creditos.
-
 -------------------------------------------------------------------------
 Release :	Sokoban 0.6 (28 Noviembre 2021)
 -------------------------------------------------------------------------
