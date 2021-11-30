@@ -28,6 +28,7 @@ void App::LoopApp()
     music.play();
 
     TM->levelOne(player);
+    //TM->levelTwo(player);
 
     while (window.isOpen())
     {
