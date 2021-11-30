@@ -15,6 +15,7 @@
 ![Sokaba](sfml-test/res/README/Level-1.png)
 
 # `instrucciones`
+>Muevete por el menu con W y S, interactua con las opciones con ENTER.
 >Mueve a tu personaje con WASD.
 >Mueve las cajas hasta uno de los puntos designados en el nivel.
 >Supera todos lo nivesles y presumelo a tus amigos.
