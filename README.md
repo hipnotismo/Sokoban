@@ -1,4 +1,5 @@
 # Sokoban
+![Sokaba](sfml-test/res/README/Level-1.png)
 
 # **`Sokoban`** un Sokoban creado en glorioso SFML
 
